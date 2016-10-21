@@ -1,4 +1,4 @@
-(server-start)
+;; (server-start)
 ;; (setq gc-cons-threshold 20000000) ;; 20 mb
 
 ;; auto reload files when changed outside of emacs
