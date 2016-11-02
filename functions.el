@@ -84,11 +84,12 @@ sReplace string: ")
   ;; ":12345"
   (let (
 		(content (substring "the quick :12345\ fox"))
-		(content (buffer-substring (line-beginning-position -2) (line-beginning-position)))	
+		(content (buffer-substring (line-beginning-position -6) (line-beginning-position)))
 		(pattern (substring "\\([0-9]\\{5\\}\\)"))
 		)
 	(string-match pattern content)
 	(message (match-string 0 content))
+	;; (substring content)
 		)
 
   

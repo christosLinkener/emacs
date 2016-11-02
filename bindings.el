@@ -23,7 +23,7 @@
 	  ;; (kbd "<ret>")
 	  (sit-for 0 500)
 	  (term-line-mode)
-	  ;; (kill-line)
+	  (kill-line)
 	  ))
   ;;  (define-key term-mode-map (kbd "C-c") 'kill-ring-save)
   ;; (define-key term-mode-map (kbd "C-v") 'yank)

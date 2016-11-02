@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: run MeterData jad (already on the device)
+# key: run
+# --
+AT^SJAM=1, "a:/MeterData.jad",""$0

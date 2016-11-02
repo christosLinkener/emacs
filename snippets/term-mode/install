@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Install MeterData jad (already on the device)
+# key: install
+# --
+AT^SJAM=0, "a:/MeterData.jad",""$0

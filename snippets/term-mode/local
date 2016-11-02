@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: local MeterData jad (already on the device)
+# key: local
+# --
+AT^SJAM=${1:0:install,1:start,2:stop,3:remove}, "a:/MeterData.jad",""$0

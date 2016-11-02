@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: watchdog enable/disable
+# key: watchdog
+# --
+AT^SCFG="Userware/Watchdog","${1:0:do nothing,1:restart}"$0

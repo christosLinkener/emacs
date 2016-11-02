@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: List running midlets
+# key: list
+# --
+AT^SJAM=5

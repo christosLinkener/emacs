@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: List installed midlets
+# key: listi
+# --
+AT^SJAM=4
