@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: auto MeterData jad (already on the device)
+# key: auto
+# --
+AT^SJAM=${1:1:start,2:stop}, "a:/JRC-1.56.30.jad",""$0

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: restart device
+# key: restart
+# --
+AT+CFUN=1,1$0
