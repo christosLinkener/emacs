@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: trace (otap tracing)
+# key: trace
+# --
+
+AT^SCFG="Trace/Syslog/OTAP","1"$0

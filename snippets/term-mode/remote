@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: http (grep the fucking name)
+# key: http
+# --
+AT^SJAM=${1:2:stop,3:remove}, "`(snippet-grep-http)`", ""$0

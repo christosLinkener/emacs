@@ -95,6 +95,20 @@ sReplace string: ")
   
   )
 
+(defun snippet-grep-http ()
+  (interactive)
+  ;; ":12345"
+  (let (
+		(content (buffer-substring (line-beginning-position -6) (line-beginning-position)))
+		(pattern (substring "\\(http.*jad\\)"))
+		)
+	(string-match pattern content)
+	(message (match-string 0 content))
+	;; (substring content)
+		)
+
+  )
+
 
 
 
