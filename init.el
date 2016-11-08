@@ -1,6 +1,10 @@
 ;; (server-start)
 ;; (setq gc-cons-threshold 20000000) ;; 20 mb
 
+;; turn off alarms
+;; see more at https://www.emacswiki.org/emacs/AlarmBell
+(setq ring-bell-function 'ignore)
+
 ;; auto reload files when changed outside of emacs
 (global-auto-revert-mode t)
 

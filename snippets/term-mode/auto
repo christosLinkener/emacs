@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: auto MeterData jad (already on the device)
+# name: autostart
 # key: auto
 # --
-AT^SJAM=${1:1:start,2:stop}, "a:/JRC-1.56.30.jad",""$0
+AT^SCFG="Userware/Autostart","","${1:0:off,1:on}"$0

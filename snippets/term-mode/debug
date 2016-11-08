@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Enable/disable DebugMode
+# key: debug
+# --
+
+AT^SCFG="Userware/DebugMode","${1:on/off}"$0
