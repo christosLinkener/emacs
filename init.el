@@ -1,6 +1,9 @@
 ;; (server-start)
 ;; (setq gc-cons-threshold 20000000) ;; 20 mb
 
+(fset 'yes-or-no-p 'y-or-n-p)
+
+
 ;; turn off alarms
 ;; see more at https://www.emacswiki.org/emacs/AlarmBell
 (setq ring-bell-function 'ignore)
@@ -62,10 +65,13 @@
 (load "~/.emacs.d/modes.el")
 (load "~/.emacs.d/bindings.el")
 (load "~/.emacs.d/theme.el")
+(load "~/.emacs.d/windows.el")
 
 ;; Highlight current line
 (global-hl-line-mode 1)
 (set-face-attribute hl-line-face nil :underline nil)
+
+;; (require 'visual-regexp)
 
 ;; The end
 (custom-set-variables
@@ -75,7 +81,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-	(yasnippet spacemacs-theme zenburn-theme which-key use-package undo-tree swiper-helm sublime-themes soothe-theme solarized-theme smooth-scrolling smart-mode-line-powerline-theme rainbow-mode rainbow-delimiters nlinum multiple-cursors monokai-theme minimap matlab-mode material-theme key-chord iy-go-to-char imenu-anywhere helm-swoop gruber-darker-theme expand-region dracula-theme distinguished-theme dakrone-theme counsel company avy ample-zen-theme ample-theme ace-jump-mode))))
+	(visual-regexp-steroids visual-regexp yasnippet spacemacs-theme zenburn-theme which-key use-package undo-tree swiper-helm sublime-themes soothe-theme solarized-theme smooth-scrolling smart-mode-line-powerline-theme rainbow-mode rainbow-delimiters nlinum multiple-cursors monokai-theme minimap matlab-mode material-theme key-chord iy-go-to-char imenu-anywhere helm-swoop gruber-darker-theme expand-region dracula-theme distinguished-theme dakrone-theme counsel company avy ample-zen-theme ample-theme ace-jump-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

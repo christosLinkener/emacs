@@ -1,0 +1,17 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+((#("MeterData" 0 9
+   (face ivy-virtual))
+ (filename . "~/git/MeterData/")
+ (front-context-string . "Application Desc")
+ (rear-context-string . "373 11-28 16:56 ")
+ (position . 215))
+(#(".emacs.d" 0 8
+   (face ivy-virtual))
+ (filename . "~/.emacs.d/")
+ (front-context-string . "auto-save-list\n ")
+ (rear-context-string . "  0 11-17 12:06 ")
+ (position . 210))
+)

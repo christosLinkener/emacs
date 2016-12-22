@@ -8,6 +8,10 @@
 ;; (use-package material-theme
 ;; :ensure t)
 
+;;(use-package visual-regexp
+  ;; :ensure t
+  ;; )
+
 (use-package nlinum
   :ensure t
   :config
@@ -197,7 +201,7 @@
 		   ;; (key-chord-define-global "x3" 'split-window-right)
 		   (key-chord-define-global "x3" (lambda () (interactive)(split-window-horizontally) (other-window 1)))
 		   ;; mnemonic: list buffers
-		   (key-chord-define-global "lb" 'helm-mini)
+		   (key-chord-define-global "l`" 'helm-mini)
 		   (key-chord-define-global "hs" 'helm-swoop-without-pre-input)
 		   ;; iy go to char
 		   (key-chord-define-global "fg" 'iy-go-to-char)

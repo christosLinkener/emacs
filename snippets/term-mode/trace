@@ -3,4 +3,4 @@
 # key: trace
 # --
 
-AT^SCFG="Trace/Syslog/OTAP","1"$0
+AT^SCFG="Trace/Syslog/OTAP","${1:1}"$0
