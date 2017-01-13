@@ -26,6 +26,10 @@
 
   )
 
+(use-package htmlize
+  :ensure t
+  )
+
 (use-package smooth-scrolling
   :ensure t
   :config
@@ -80,6 +84,9 @@
   :config
   (setq helm-swoop-use-fuzzy-match nil)
   (setq helm-swoop-speed-or-color t)
+  (setq helm-autoresize-max-height 35)
+  (setq helm-autoresize-min-height 20)
+  (helm-autoresize-mode)
   )
 
 ;; it looks like counsel is a requirement for swiper
@@ -202,7 +209,7 @@
 		   (key-chord-define-global "x3" (lambda () (interactive)(split-window-horizontally) (other-window 1)))
 		   ;; mnemonic: list buffers
 		   (key-chord-define-global "l`" 'helm-mini)
-		   (key-chord-define-global "hs" 'helm-swoop-without-pre-input)
+		   ;; (key-chord-define-global "hs" 'helm-swoop-without-pre-input)
 		   ;; iy go to char
 		   (key-chord-define-global "fg" 'iy-go-to-char)
 		   (key-chord-define-global "df" 'iy-go-to-char-backward)

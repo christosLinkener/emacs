@@ -4,6 +4,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 
+
 ;; turn off alarms
 ;; see more at https://www.emacswiki.org/emacs/AlarmBell
 (setq ring-bell-function 'ignore)
@@ -55,6 +56,8 @@
 
 (package-initialize)
 
+
+
 ;; Bootstrap `use-package'
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -71,6 +74,13 @@
 (global-hl-line-mode 1)
 (set-face-attribute hl-line-face nil :underline nil)
 
+;; Allowing ~"asds"~ as inline code in org-mode
+(require 'org)
+(setcar (nthcdr 2 org-emphasis-regexp-components) " \t\r\n,")
+(org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)
+
+
+
 ;; (require 'visual-regexp)
 
 ;; The end
@@ -81,7 +91,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-	(visual-regexp-steroids visual-regexp yasnippet spacemacs-theme zenburn-theme which-key use-package undo-tree swiper-helm sublime-themes soothe-theme solarized-theme smooth-scrolling smart-mode-line-powerline-theme rainbow-mode rainbow-delimiters nlinum multiple-cursors monokai-theme minimap matlab-mode material-theme key-chord iy-go-to-char imenu-anywhere helm-swoop gruber-darker-theme expand-region dracula-theme distinguished-theme dakrone-theme counsel company avy ample-zen-theme ample-theme ace-jump-mode))))
+	(htmlize visual-regexp-steroids visual-regexp yasnippet spacemacs-theme zenburn-theme which-key use-package undo-tree swiper-helm sublime-themes soothe-theme solarized-theme smooth-scrolling smart-mode-line-powerline-theme rainbow-mode rainbow-delimiters nlinum multiple-cursors monokai-theme minimap matlab-mode material-theme key-chord iy-go-to-char imenu-anywhere helm-swoop gruber-darker-theme expand-region dracula-theme distinguished-theme dakrone-theme counsel company avy ample-zen-theme ample-theme ace-jump-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
