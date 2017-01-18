@@ -1,3 +1,9 @@
+(defun indent-buffer ()
+  (interactive)
+  (save-excursion
+	(indent-region (point-min) (point-max) nil)))
+
+
 (defun toggle-comment-on-line-old ()
   "comment or uncomment current line"
   (interactive)
@@ -26,6 +32,24 @@
 	)
   )
 
+;; check https://www.emacswiki.org/emacs/ElispCookbook
+(defun my-region-reverse (str)
+  (interactive "P")
+  (let* (
+		 ;; variables
+		 (regionContent (buffer-substring (mark) (point)))
+		 (reversed (s-reverse regionContent))
+		 )
+	;; body
+	(message  (concat "original '" regionContent "' reversed '" reversed "'" ))
+	(kill-region (mark) (point))
+	(insert reversed)
+	)
+  )
+
+
+
+
 (fset 'test-macro
 	  [?\M-x ?h ?e ?l ?m ?- ?s ?w ?o ?o ?p return ?i ?n ?\C-c ?\C-e ?\M-< ?\M-% ?i ?n return ?o ?u ?t return ?y ?y ?y return ?\C-x ?\C-s])
 
@@ -38,15 +62,15 @@ sReplace string: ")
 						  (interactive)
 						  (message "1: %s" (buffer-name))
 						  (run-with-idle-timer 0 nil (lambda(from to)
-							   (message "2: %s" (buffer-name))
-							   (run-with-idle-timer 0 nil (lambda(from to)
-							   (interactive)
-							   (switch-to-buffer helm-swoop-edit-buffer)
-							   (beginning-of-buffer)
-							   (query-replace from to)
-							   ) from to)
-							   (helm-swoop-edit)
-							   )from to)
+													   (message "2: %s" (buffer-name))
+													   (run-with-idle-timer 0 nil (lambda(from to)
+																					(interactive)
+																					(switch-to-buffer helm-swoop-edit-buffer)
+																					(beginning-of-buffer)
+																					(query-replace from to)
+																					) from to)
+													   (helm-swoop-edit)
+													   )from to)
 						  
 						  (helm-swoop :$query from)
 						  ) from to)
@@ -56,28 +80,28 @@ sReplace string: ")
   
   )
 
-  "Use ace-jump-line-mode to copy/paste a line in the current cursor position"
+"Use ace-jump-line-mode to copy/paste a line in the current cursor position"
 
 
 
 (defun my-copy-paste-line ()
   "Use ace-jump-line-mode to copy/paste a line in the current cursor position"
   (interactive)
-    (setq ace-jump-mode-end-hook
+  (setq ace-jump-mode-end-hook
         (list `(lambda()
                  (progn
 				   (message "test2")
 				   (kill-ring-save (line-beginning-position)
-								  (+ -1 (line-beginning-position 2)))
+								   (+ -1 (line-beginning-position 2)))
 
 
 				   (exchange-point-and-mark)
 				   (yank)
 				   (setq ace-jump-mode-end-hook nil)
-                 ))))
-	(ace-jump-line-mode)
+				   ))))
+  (ace-jump-line-mode)
   
-	)
+  )
 
 (defun snippet-grep-root ()
   (interactive)
@@ -90,7 +114,7 @@ sReplace string: ")
 	(string-match pattern content)
 	(message (match-string 0 content))
 	;; (substring content)
-		)
+	)
 
   
   )
@@ -105,7 +129,7 @@ sReplace string: ")
 	(string-match pattern content)
 	(message (match-string 0 content))
 	;; (substring content)
-		)
+	)
 
   )
 
@@ -119,11 +143,11 @@ sReplace string: ")
 							   (beginning-of-buffer)
 							   (query-replace "a" "b")
 							   ))
-	)
+  )
 
 
 (fset 'my-macro-swoop
 	  [?\M-x ?h ?e ?l ?m ?- ?s ?w ?o ?o ?p return ?g ?i ?r ?l ?s ?\M-< ?\C-c ?\C-e])
 
 (fset 'my-test2
-   [?\M-x ?h ?e ?l ?m ?- ?s ?w ?o ?o ?p return ?g ?i ?r ?l ?s up up ?\M-< ?\C-c ?\C-e])
+	  [?\M-x ?h ?e ?l ?m ?- ?s ?w ?o ?o ?p return ?g ?i ?r ?l ?s up up ?\M-< ?\C-c ?\C-e])

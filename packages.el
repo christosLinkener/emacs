@@ -26,6 +26,15 @@
 
   )
 
+;; string manipulations (eg s-reverse to reverse a string)
+(use-package s
+  :ensure t
+  )
+
+(use-package php-mode
+  :ensure t
+  )
+
 (use-package htmlize
   :ensure t
   )
@@ -209,8 +218,8 @@
 		   (key-chord-define-global "x3" (lambda () (interactive)(split-window-horizontally) (other-window 1)))
 		   ;; mnemonic: list buffers
 		   (key-chord-define-global "l`" 'helm-mini)
-		   ;; (key-chord-define-global "hs" 'helm-swoop-without-pre-input)
-		   ;; iy go to char
+		   (key-chord-define-global "hl" 'helm-swoop)
+		   ;; iy gdo to char
 		   (key-chord-define-global "fg" 'iy-go-to-char)
 		   (key-chord-define-global "df" 'iy-go-to-char-backward)
 		   )
