@@ -1,5 +1,10 @@
-#*#
+\#*\#
 */*
 !snippets/*
 *~
 recentf
+
+# some files created by specific pagkaces
+.mc-lists.el
+.org-id-locations
+init.tex

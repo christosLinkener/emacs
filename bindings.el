@@ -38,3 +38,5 @@
 
 (add-hook 'term-mode-hook 'my-term-hook)
 
+(global-set-key (kbd "C-`") 'helm-all-mark-rings)
+(global-set-key (kbd "C-S-v") 'helm-show-kill-ring)

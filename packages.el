@@ -35,6 +35,10 @@
   :ensure t
   )
 
+(use-package markdown-mode
+  :ensure t
+  )
+
 (use-package htmlize
   :ensure t
   )
@@ -74,7 +78,8 @@
 		("C-x C-f" . helm-find-files)
 		:map helm-map
 		("<tab>" . helm-execute-persistent-action)
-										; ("M-q" . helm-keyboard-quit)
+		("<left>" . left-char)
+		("<right>" . right-char)
 		)
   :init
   (require 'helm-config)
@@ -85,7 +90,7 @@
 		helm-apropos-fuzzy-match t
 		helm-buffers-fuzzy-matching t
 		helm-completion-in-region-fuzzy-match t
-		helm-mode-fuzzy-match t)  
+		helm-mode-fuzzy-match t)
   )
 
 (use-package helm-swoop
@@ -173,6 +178,7 @@
   (global-set-key (kbd "C->") 'mc/mark-next-like-this-word)
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this-word)
   (global-set-key (kbd "M-<f3>") 'mc/mark-all-like-this)
+  (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
   )
 
