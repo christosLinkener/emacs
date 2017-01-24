@@ -91,6 +91,10 @@
 		helm-buffers-fuzzy-matching t
 		helm-completion-in-region-fuzzy-match t
 		helm-mode-fuzzy-match t)
+  ;; disable auto input
+  (setq helm-swoop-pre-input-function
+       (lambda () nil))
+
   )
 
 (use-package helm-swoop
@@ -111,7 +115,7 @@
 
 (use-package swiper
   :ensure t
-  :bind(("C-s" . swiper))
+  ;; :bind(("C-s" . swiper))
   :config(progn
 		   (ivy-mode 1)
 		   (setq ivy-use-virtual-buffers t)
