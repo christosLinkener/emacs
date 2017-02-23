@@ -2,8 +2,9 @@
 ;; (setq gc-cons-threshold 20000000) ;; 20 mb
 
 (fset 'yes-or-no-p 'y-or-n-p)
-
-
+:(require 'tramp)
+(set-default 'tramp-auto-save-directory '(("." . "~/.emacs-saves/tramp")))
+(set-default 'tramp-default-method "ssh")
 
 ;; turn off alarms
 ;; see more at https://www.emacswiki.org/emacs/AlarmBell
@@ -14,13 +15,13 @@
 
 ;; backup directory
 (setq
-   backup-by-copying t      ; don't clobber symlinks
-   backup-directory-alist
-    '(("." . "~/.emacs-saves"))    ; don't litter my fs tree
-   delete-old-versions t
-   kept-new-versions 6
-   kept-old-versions 2
-   version-control t)       ; use versioned backups
+ backup-by-copying t      ; don't clobber symlinks
+ backup-directory-alist
+ '(("." . "~/.emacs-saves"))    ; don't litter my fs tree
+ delete-old-versions t
+ kept-new-versions 6
+ kept-old-versions 2
+ version-control t)       ; use versioned backups
 
 
 ;; better scrolling
@@ -81,6 +82,28 @@
 ;; fontifying source blocks
 (setq org-src-fontify-natively t)
 
+(setq org-todo-keyword-faces
+	  '(
+		;; ("TODO" . org-warning)
+		("STARTED" . "yellow")
+		;; ("CANCELED" . (:foreground "blue" :weight bold))
+		("IN-PROGRESS" . (:foreground "DeepSkyBlue"))
+		)
+	  )
+
+
+;; # -*- org-todo-keyword-faces: (("TODO" . "red3") ("IN-PROGRESS" . "DeepSkyBlue") ("DONE" . "green3")); -*-
+
+(require 'ox-latex)
+(add-to-list 'org-latex-classes
+             '("article"
+               "\\documentclass{article}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
 
 
 ;; (require 'visual-regexp)
@@ -94,7 +117,21 @@
  '(cua-mode t nil (cua-base))
  '(package-selected-packages
    (quote
-	(s php-mode htmlize visual-regexp-steroids visual-regexp yasnippet spacemacs-theme zenburn-theme which-key use-package undo-tree swiper-helm sublime-themes soothe-theme solarized-theme smooth-scrolling smart-mode-line-powerline-theme rainbow-mode rainbow-delimiters nlinum multiple-cursors monokai-theme minimap matlab-mode material-theme key-chord iy-go-to-char imenu-anywhere helm-swoop gruber-darker-theme expand-region dracula-theme distinguished-theme dakrone-theme counsel company avy ample-zen-theme ample-theme ace-jump-mode))))
+	(markdown-mode s php-mode htmlize visual-regexp-steroids visual-regexp yasnippet spacemacs-theme zenburn-theme which-key use-package undo-tree swiper-helm sublime-themes soothe-theme solarized-theme smooth-scrolling smart-mode-line-powerline-theme rainbow-mode rainbow-delimiters nlinum multiple-cursors monokai-theme minimap matlab-mode material-theme key-chord iy-go-to-char imenu-anywhere helm-swoop gruber-darker-theme expand-region dracula-theme distinguished-theme dakrone-theme counsel company avy ample-zen-theme ample-theme ace-jump-mode)))
+ '(safe-local-variable-values
+   (quote
+	((org-todo-keyword-faces
+	  ("TODO" . "red")
+	  ("IN-PROGRESS" . "DeepSkyBlue")
+	  ("DONE" . "green"))
+	 (org-todo-keyword-faces
+	  ("TODO" . "red")
+	  ("IN-PROGRESS" . "CornflowerBlue")
+	  ("DONE" . "green"))
+	 (org-todo-keyword-faces
+	  ("TODO" . "red")
+	  ("IN-PROGRESS" . "blue")
+	  ("DONE" . "green"))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

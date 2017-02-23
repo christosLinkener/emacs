@@ -211,11 +211,11 @@
 		   (key-chord-mode 1)
 		   ;; (key-chord-define-global "hj" 'undo)
 		   ;; Jump Word
-		   (key-chord-define-global "jw" 'ace-jump-mode)
+		   (key-chord-define-global " w" 'ace-jump-mode)
 		   ;; Jump Character
-		   (key-chord-define-global "jc" 'ace-jump-char-mode)
+		   (key-chord-define-global " c" 'ace-jump-char-mode)
 		   ;; Jump Line
-		   (key-chord-define-global "jl" 'ace-jump-line-mode)
+		   (key-chord-define-global " l" 'ace-jump-line-mode)
 		   ;; Exapnd Region
 		   (key-chord-define-global "e3" 'er/expand-region)
 		   (key-chord-define-global "e2" 'er/contract-region)
@@ -232,5 +232,12 @@
 		   ;; iy gdo to char
 		   (key-chord-define-global "fg" 'iy-go-to-char)
 		   (key-chord-define-global "df" 'iy-go-to-char-backward)
+		   
+		   ;; move between windows -WASD- like movement, except for the right hand
+		   ;; using ijkl
+		   (key-chord-define-global "wl" 'windmove-right)
+		   (key-chord-define-global "wk" 'windmove-down)
+		   (key-chord-define-global "wj" 'windmove-left)
+		   (key-chord-define-global "wi" 'windmove-up)
 		   )
   )
