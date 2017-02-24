@@ -9,8 +9,8 @@
 ;; :ensure t)
 
 ;;(use-package visual-regexp
-  ;; :ensure t
-  ;; )
+;; :ensure t
+;; )
 
 (use-package nlinum
   :ensure t
@@ -93,7 +93,7 @@
 		helm-mode-fuzzy-match t)
   ;; disable auto input
   (setq helm-swoop-pre-input-function
-       (lambda () nil))
+		(lambda () nil))
 
   )
 
@@ -201,43 +201,49 @@
 
 (use-package key-chord
   :ensure t
-  :config(progn
-		   ;; disable in mini buffers
-		   (defun disable-key-chord-mode ()
-			 (set (make-local-variable 'input-method-function) nil))
+  :config
+  ;; disable in mini buffers
+  (setq key-chord-two-keys-delay .05
+		key-chord-one-key-delay .1)
+  (defun disable-key-chord-mode ()
+	(set (make-local-variable 'input-method-function) nil))
 
-		   (add-hook 'minibuffer-setup-hook #'disable-key-chord-mode)
+  (add-hook 'minibuffer-setup-hook #'disable-key-chord-mode)
 
-		   (key-chord-mode 1)
-		   ;; (key-chord-define-global "hj" 'undo)
-		   ;; Jump Word
-		   (key-chord-define-global " w" 'ace-jump-mode)
-		   ;; Jump Character
-		   (key-chord-define-global " c" 'ace-jump-char-mode)
-		   ;; Jump Line
-		   (key-chord-define-global " l" 'ace-jump-line-mode)
-		   ;; Exapnd Region
-		   (key-chord-define-global "e3" 'er/expand-region)
-		   (key-chord-define-global "e2" 'er/contract-region)
-		   ;; windows
-		   (key-chord-define-global "x0" 'delete-window)
-		   (key-chord-define-global "x1" 'delete-other-windows)
-		   ;; (key-chord-define-global "x2" 'split-window-below)
-		   (key-chord-define-global "x2" (lambda () (interactive)(split-window-vertically) (other-window 1)))
-		   ;; (key-chord-define-global "x3" 'split-window-right)
-		   (key-chord-define-global "x3" (lambda () (interactive)(split-window-horizontally) (other-window 1)))
-		   ;; mnemonic: list buffers
-		   (key-chord-define-global "l`" 'helm-mini)
-		   (key-chord-define-global "hl" 'helm-swoop)
-		   ;; iy gdo to char
-		   (key-chord-define-global "fg" 'iy-go-to-char)
-		   (key-chord-define-global "df" 'iy-go-to-char-backward)
-		   
-		   ;; move between windows -WASD- like movement, except for the right hand
-		   ;; using ijkl
-		   (key-chord-define-global "wl" 'windmove-right)
-		   (key-chord-define-global "wk" 'windmove-down)
-		   (key-chord-define-global "wj" 'windmove-left)
-		   (key-chord-define-global "wi" 'windmove-up)
-		   )
+  (key-chord-mode 1)
+  ;; (key-chord-define-global "hj" 'undo)
+  ;; Jump Word
+  (key-chord-define-global " w" 'ace-jump-mode)
+  ;; Jump Character
+  (key-chord-define-global " c" 'ace-jump-char-mode)
+  ;; Jump Line
+  (key-chord-define-global " l" 'ace-jump-line-mode)
+  
+  ;; Expand Region (r for region)
+  (key-chord-define-global "rj" 'er/expand-region)
+  (key-chord-define-global "rk" 'er/contract-region)
+  
+
+  ;; mnemonic: list buffers
+  (key-chord-define-global "ha" 'helm-mini)
+  (key-chord-define-global "hs" 'helm-swoop)
+  (key-chord-define-global "hr" 'helm-all-mark-rings)
+  ;; iy gdo to char
+  ;; (key-chord-define-global "fg" 'iy-go-to-char)
+  ;; (key-chord-define-global "df" 'iy-go-to-char-backward)
+  
+  ;; move between windows -WASD- like movement, except for the right hand
+  ;; using ijkl
+  (key-chord-define-global "wl" 'windmove-right)
+  (key-chord-define-global "wk" 'windmove-down)
+  (key-chord-define-global "wj" 'windmove-left)
+  (key-chord-define-global "wi" 'windmove-up)
+
+    ;; windows
+  (key-chord-define-global "wd" 'delete-window)
+  (key-chord-define-global "wo" 'delete-other-windows)
+  ;; (key-chord-define-global "x2" 'split-window-below)
+  (key-chord-define-global "wh" (lambda () (interactive)(split-window-horizontally) (other-window 1)))
+  (key-chord-define-global "wn" (lambda () (interactive)(split-window-vertically) (other-window 1)))
+
   )
