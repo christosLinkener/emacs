@@ -70,6 +70,7 @@
 (load "~/.emacs.d/bindings.el")
 (load "~/.emacs.d/theme.el")
 (load "~/.emacs.d/windows.el")
+(load "~/.emacs.d/latex.el")
 
 ;; Highlight current line
 (global-hl-line-mode 1)
@@ -94,15 +95,15 @@
 
 ;; # -*- org-todo-keyword-faces: (("TODO" . "red3") ("IN-PROGRESS" . "DeepSkyBlue") ("DONE" . "green3")); -*-
 
-(require 'ox-latex)
-(add-to-list 'org-latex-classes
-             '("article"
-               "\\documentclass{article}"
-               ("\\section{%s}" . "\\section*{%s}")
-               ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-               ("\\paragraph{%s}" . "\\paragraph*{%s}")
-               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+;; (require 'ox-latex)
+;; (add-to-list 'org-latex-classes
+             ;; '("article"
+               ;; "\\documentclass{article}"
+               ;; ("\\section{%s}" . "\\section*{%s}")
+               ;; ("\\subsection{%s}" . "\\subsection*{%s}")
+               ;; ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ;; ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ;; ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
 
 
