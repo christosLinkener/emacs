@@ -1,14 +1,40 @@
 ;; (message "Adding pdf latex etc in path:\n")
 
-(setenv "PATH"
-		(concat
-		 "D:/Portables/Miktex-portable/texmfs/install/miktex/bin" ";" (getenv "PATH")
-		 )
-		)
+(let*
+	(
+	 (miktex "C:\\\\miktex\\texmfs\\install\\miktex\\bin")
+	 (texlive "C:\\texlive\\bin\\win32")
+	 (latexBin texlive) ;; change this line accordingly
+	 )
+  (setenv "PATH"
+		  (concat latexBin ";" (getenv "PATH"))
+		  )
+  (message "The new path:\n")
+  (message (getenv "PATH"))
 
-;; printing the new path
-;; (message (getenv "PATH"))
+  ;; adding to the exec path (used for latex fragments) - which do not work :O
+  (setq exec-path (append (list latexBin) exec-path))
+  )
 
+
+
+;; (setq org-latex-listings t)
+;; (add-to-list 'org-latex-packages-alist '("" "listings"))
+
+(setq org-latex-listings 'minted
+	  org-latex-packages-alist '(("" "minted"))
+	  )
+
+
+;; the 2nd call is there because if not, the table of contents are not rendered for some reason..
 (setq org-latex-pdf-process 
-	  '("xelatex -interaction nonstopmode %f"
-		"xelatex -interaction nonstopmode %f")) ;; for multiple passes
+	  '("xelatex -shell-escape -interaction nonstopmode %f"
+		"xelatex -shell-escape -interaction nonstopmode %f"
+		))
+
+
+;; (setq org-latex-pdf-process '(
+							  ;; "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+							  ;; "bibtex %b"
+							  ;; "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+							  ;; ))

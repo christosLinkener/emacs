@@ -71,40 +71,11 @@
 (load "~/.emacs.d/theme.el")
 (load "~/.emacs.d/windows.el")
 (load "~/.emacs.d/latex.el")
+(load "~/.emacs.d/org-customization.el")
 
 ;; Highlight current line
 (global-hl-line-mode 1)
 (set-face-attribute hl-line-face nil :underline nil)
-
-;; Allowing ~"asds"~ as inline code in org-mode
-(require 'org)
-(setcar (nthcdr 2 org-emphasis-regexp-components) " \t\r\n,")
-(org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)
-;; fontifying source blocks
-(setq org-src-fontify-natively t)
-
-(setq org-todo-keyword-faces
-	  '(
-		;; ("TODO" . org-warning)
-		("STARTED" . "yellow")
-		;; ("CANCELED" . (:foreground "blue" :weight bold))
-		("IN-PROGRESS" . (:foreground "DeepSkyBlue"))
-		)
-	  )
-
-
-;; # -*- org-todo-keyword-faces: (("TODO" . "red3") ("IN-PROGRESS" . "DeepSkyBlue") ("DONE" . "green3")); -*-
-
-;; (require 'ox-latex)
-;; (add-to-list 'org-latex-classes
-             ;; '("article"
-               ;; "\\documentclass{article}"
-               ;; ("\\section{%s}" . "\\section*{%s}")
-               ;; ("\\subsection{%s}" . "\\subsection*{%s}")
-               ;; ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-               ;; ("\\paragraph{%s}" . "\\paragraph*{%s}")
-               ;; ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-
 
 
 ;; (require 'visual-regexp)
