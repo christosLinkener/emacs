@@ -16,6 +16,13 @@
   :ensure t
   :config
   (global-nlinum-mode 1)
+  (set-face-attribute 'linum nil :height 100)
+  )
+
+(use-package windresize
+  :ensure t
+  :config
+  (setq windresize-default-increment 5)
   )
 
 (use-package yasnippet
@@ -246,4 +253,5 @@
   (key-chord-define-global "wh" (lambda () (interactive)(split-window-horizontally) (other-window 1)))
   (key-chord-define-global "wn" (lambda () (interactive)(split-window-vertically) (other-window 1)))
 
+  (key-chord-define-global "wr" 'windresize)
   )

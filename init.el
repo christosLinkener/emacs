@@ -89,7 +89,7 @@
  '(cua-mode t nil (cua-base))
  '(package-selected-packages
    (quote
-	(markdown-mode s php-mode htmlize visual-regexp-steroids visual-regexp yasnippet spacemacs-theme zenburn-theme which-key use-package undo-tree swiper-helm sublime-themes soothe-theme solarized-theme smooth-scrolling smart-mode-line-powerline-theme rainbow-mode rainbow-delimiters nlinum multiple-cursors monokai-theme minimap matlab-mode material-theme key-chord iy-go-to-char imenu-anywhere helm-swoop gruber-darker-theme expand-region dracula-theme distinguished-theme dakrone-theme counsel company avy ample-zen-theme ample-theme ace-jump-mode)))
+	(windresize markdown-mode s php-mode htmlize visual-regexp-steroids visual-regexp yasnippet spacemacs-theme zenburn-theme which-key use-package undo-tree swiper-helm sublime-themes soothe-theme solarized-theme smooth-scrolling smart-mode-line-powerline-theme rainbow-mode rainbow-delimiters nlinum multiple-cursors monokai-theme minimap matlab-mode material-theme key-chord iy-go-to-char imenu-anywhere helm-swoop gruber-darker-theme expand-region dracula-theme distinguished-theme dakrone-theme counsel company avy ample-zen-theme ample-theme ace-jump-mode)))
  '(safe-local-variable-values
    (quote
 	((org-todo-keyword-faces

@@ -16,3 +16,6 @@
 
 (setq org-goto-interface 'outline-path-completionp)
 (setq org-outline-path-complete-in-steps nil)
+
+;; highlight latex fragments in org
+(setq org-highlight-latex-and-related '(latex))
