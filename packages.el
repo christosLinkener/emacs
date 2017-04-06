@@ -219,39 +219,39 @@
 
   (key-chord-mode 1)
   ;; (key-chord-define-global "hj" 'undo)
-  ;; Jump Word
-  (key-chord-define-global " w" 'ace-jump-mode)
+
+  ;; ace: c (c for jump : left hand middle finger)
+  (key-chord-define-global "cj" 'ace-jump-mode)
   ;; Jump Character
-  (key-chord-define-global " c" 'ace-jump-char-mode)
+  (key-chord-define-global "ck" 'ace-jump-char-mode)
   ;; Jump Line
-  (key-chord-define-global " l" 'ace-jump-line-mode)
+  (key-chord-define-global "cl" 'ace-jump-line-mode)
   
   ;; Expand Region (r for region)
   (key-chord-define-global "rj" 'er/expand-region)
   (key-chord-define-global "rk" 'er/contract-region)
   
 
-  ;; mnemonic: list buffers
-  (key-chord-define-global "ha" 'helm-mini)
-  (key-chord-define-global "hs" 'helm-swoop)
-  (key-chord-define-global "hr" 'helm-all-mark-rings)
+  ;; helm: , (right hand middle finger)
+  (key-chord-define-global ",r" 'helm-all-mark-rings) ;; Rings
+  (key-chord-define-global ",m" 'helm-mini) ;; Mini
+  (key-chord-define-global ",s" 'helm-swoop) ;; Swoop
   ;; iy gdo to char
   ;; (key-chord-define-global "fg" 'iy-go-to-char)
   ;; (key-chord-define-global "df" 'iy-go-to-char-backward)
   
   ;; move between windows -WASD- like movement, except for the right hand
-  ;; using ijkl
-  (key-chord-define-global "wl" 'windmove-right)
-  (key-chord-define-global "wk" 'windmove-down)
-  (key-chord-define-global "wj" 'windmove-left)
-  (key-chord-define-global "wi" 'windmove-up)
+  ;; using ;
+  (key-chord-define-global ";w" 'windmove-up)
+  (key-chord-define-global ";a" 'windmove-left)
+  (key-chord-define-global ";s" 'windmove-down)
+  (key-chord-define-global ";d" 'windmove-right)
 
     ;; windows
-  (key-chord-define-global "wd" 'delete-window)
-  (key-chord-define-global "wo" 'delete-other-windows)
-  ;; (key-chord-define-global "x2" 'split-window-below)
-  (key-chord-define-global "wh" (lambda () (interactive)(split-window-horizontally) (other-window 1)))
-  (key-chord-define-global "wn" (lambda () (interactive)(split-window-vertically) (other-window 1)))
+  (key-chord-define-global ";q" 'delete-window) ;;q Quit
+  (key-chord-define-global ";e" 'delete-other-windows)
+  (key-chord-define-global ";f" (lambda () (interactive)(split-window-horizontally) (other-window 1))) ;; f home row
+  (key-chord-define-global ";v" (lambda () (interactive)(split-window-vertically) (other-window 1))) ;; Vertical
 
-  (key-chord-define-global "wr" 'windresize)
+  (key-chord-define-global ";r" 'windresize) ; Resize
   )
