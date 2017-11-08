@@ -114,6 +114,16 @@
   (helm-autoresize-mode)
   )
 
+;; (use-package projectile
+  ;; :ensure t
+  ;; )
+;; (use-package helm-projectile
+  ;; :ensure t
+  ;; )
+(use-package helm-ag
+  :ensure t
+  )
+
 ;; it looks like counsel is a requirement for swiper
 (use-package counsel
   :ensure t
@@ -236,6 +246,9 @@
   (key-chord-define-global ",r" 'helm-all-mark-rings) ;; Rings
   (key-chord-define-global ",m" 'helm-mini) ;; Mini
   (key-chord-define-global ",s" 'helm-swoop) ;; Swoop
+  (key-chord-define-global ",t" 'helm-projectile) ;; projecTile
+  (key-chord-define-global ",g" 'helm-projectile-ag) ;; aG
+  
   ;; iy gdo to char
   ;; (key-chord-define-global "fg" 'iy-go-to-char)
   ;; (key-chord-define-global "df" 'iy-go-to-char-backward)

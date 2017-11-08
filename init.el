@@ -1,17 +1,20 @@
 ;; (server-start)
-;; (setq gc-cons-threshold 20000000) ;; 20 mb
+(setq gc-cons-threshold 20000) ; ie 20mb, default is 800kb
+
+;; Disable all version control
+(setq vc-handled-backends nil)
 
 (fset 'yes-or-no-p 'y-or-n-p)
-:(require 'tramp)
-(set-default 'tramp-auto-save-directory '(("." . "~/.emacs-saves/tramp")))
-(set-default 'tramp-default-method "ssh")
+;; (require 'tramp)
+;; (set-default 'tramp-auto-save-directory '(("." . "~/.emacs-saves/tramp")))
+;; (set-default 'tramp-default-method "ssh")
 
 ;; turn off alarms
 ;; see more at https://www.emacswiki.org/emacs/AlarmBell
 (setq ring-bell-function 'ignore)
 
 ;; auto reload files when changed outside of emacs
-(global-auto-revert-mode t)
+;; (global-auto-revert-mode t)
 
 ;; backup directory
 (setq
@@ -47,17 +50,16 @@
 			  indent-tabs-mode t)
 
 ;; Speed customizations
-(remove-hook 'find-file-hooks 'vc-find-file-hook)
-(setq w32-get-true-file-attributes nil)
+;; (remove-hook 'find-file-hooks 'vc-find-file-hook)
+;; (setq w32-get-true-file-attributes nil)
 
 (require 'package)
-(setq package-enable-x3at-startup nil)
+(setq package-enable-at-startup nil)
+(package-initialize)
+(require 'use-package)
+
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/"))
-
-(package-initialize)
-
-
 
 ;; Bootstrap `use-package'
 (unless (package-installed-p 'use-package)
@@ -77,6 +79,15 @@
 (global-hl-line-mode 1)
 (set-face-attribute hl-line-face nil :underline nil)
 
+;; display shell in same buffer
+(push (cons "\\*shell\\*" display-buffer--same-window-action) display-buffer-alist)
+
+;; ipython
+(setq
+   python-shell-interpreter "ipython"
+   python-shell-interpreter-args "--profile=dev"
+)
+
 
 ;; (require 'visual-regexp)
 
@@ -87,12 +98,29 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(cua-mode t nil (cua-base))
+ '(custom-safe-themes
+   (quote
+	("0c29db826418061b40564e3351194a3d4a125d182c6ee5178c237a7364f0ff12" "b3775ba758e7d31f3bb849e7c9e48ff60929a792961a2d536edec8f68c671ca5" "9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" default)))
+ '(default-input-method "greek")
+ '(ispell-dictionary "greek")
+ '(ispell-program-name "C:\\Program Files (x86)\\Aspell\\bin\\aspell.exe")
+ '(org-image-actual-width 100)
  '(package-selected-packages
    (quote
-	(windresize markdown-mode s php-mode htmlize visual-regexp-steroids visual-regexp yasnippet spacemacs-theme zenburn-theme which-key use-package undo-tree swiper-helm sublime-themes soothe-theme solarized-theme smooth-scrolling smart-mode-line-powerline-theme rainbow-mode rainbow-delimiters nlinum multiple-cursors monokai-theme minimap matlab-mode material-theme key-chord iy-go-to-char imenu-anywhere helm-swoop gruber-darker-theme expand-region dracula-theme distinguished-theme dakrone-theme counsel company avy ample-zen-theme ample-theme ace-jump-mode)))
+	(magit yasnippet windresize use-package undo-tree sublime-themes smooth-scrolling rainbow-mode rainbow-delimiters powerline php-mode nlinum multiple-cursors monokai-theme matlab-mode markdown-mode key-chord iy-go-to-char htmlize helm-swoop helm-projectile helm-ag expand-region counsel company avy ag ace-jump-mode)))
  '(safe-local-variable-values
    (quote
-	((org-todo-keyword-faces
+	((org-time-stamp-custom-formats "<%Y-%m>" . "<%Y-%m-%d %H:%M>")
+	 (org-latex-image-default-option . "max size={\\textwidth}{\\textheight}")
+	 (org-latex-image-default-width . "")
+	 (org-latex-image-default-option . "max size={\\textwidth}{\\textheight}]")
+	 (org-latex-default-figure-position . "H")
+	 (org-latex-default-figure-position . H)
+	 (org-src-preserve-indentation . t)
+	 (eval setq org-latex-default-figure-position "H" org-src-preserve-indentation t)
+	 (eval setq org-latex-default-figure-position "H")
+	 (eval setq org-latex-default-figure-position "")
+	 (org-todo-keyword-faces
 	  ("TODO" . "red")
 	  ("IN-PROGRESS" . "DeepSkyBlue")
 	  ("DONE" . "green"))

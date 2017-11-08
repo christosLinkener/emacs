@@ -4,7 +4,7 @@
 	(
 	 (miktex "C:\\\\miktex\\texmfs\\install\\miktex\\bin")
 	 (texlive "C:\\texlive\\bin\\win32")
-	 (latexBin texlive) ;; change this line accordingly
+	 (latexBin miktex) ;; change this line accordingly
 	 )
   (setenv "PATH"
 		  (concat latexBin ";" (getenv "PATH"))
@@ -21,6 +21,7 @@
 ;; (setq org-latex-listings t)
 ;; (add-to-list 'org-latex-packages-alist '("" "listings"))
 
+;; note: run 'pip install pygments' first
 (setq org-latex-listings 'minted
 	  org-latex-packages-alist '(("" "minted"))
 	  )
@@ -28,8 +29,8 @@
 
 ;; the 2nd call is there because if not, the table of contents are not rendered for some reason..
 (setq org-latex-pdf-process 
-	  '("xelatex -shell-escape -interaction nonstopmode %f"
-		"xelatex -shell-escape -interaction nonstopmode %f"
+	  '("xelatex -shell-escape -interaction=nonstopmode %f"
+		"xelatex -shell-escape -interaction=nonstopmode %f"
 		))
 
 
