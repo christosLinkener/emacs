@@ -79,6 +79,9 @@
 (global-hl-line-mode 1)
 (set-face-attribute hl-line-face nil :underline nil)
 
+;; Keeping clipboard data before replacing it with emacs copy/kill etc
+(setq save-interprogram-paste-before-kill t)
+
 ;; display shell in same buffer
 (push (cons "\\*shell\\*" display-buffer--same-window-action) display-buffer-alist)
 
