@@ -74,7 +74,6 @@
 
 (load "~/.emacs.d/functions.el")
 (load "~/.emacs.d/packages.el")
-(load "~/.emacs.d/modes.el")
 (load "~/.emacs.d/bindings.el")
 (load "~/.emacs.d/theme.el")
 (load "~/.emacs.d/windows.el")
@@ -116,7 +115,7 @@
  '(org-image-actual-width 100)
  '(package-selected-packages
    (quote
-	(helm-swoop org-ref magit yasnippet windresize use-package undo-tree sublime-themes smooth-scrolling rainbow-mode rainbow-delimiters powerline php-mode nlinum multiple-cursors monokai-theme matlab-mode markdown-mode key-chord iy-go-to-char htmlize helm-projectile helm-ag expand-region counsel company avy ag ace-jump-mode)))
+	(helm-swoop org-ref magit yasnippet windresize use-package undo-tree sublime-themes smooth-scrolling rainbow-mode rainbow-delimiters powerline php-mode nlinum multiple-cursors monokai-theme markdown-mode key-chord iy-go-to-char htmlize helm-projectile helm-ag expand-region counsel company avy ag ace-jump-mode)))
  '(safe-local-variable-values
    (quote
 	((org-time-stamp-custom-formats "<%Y-%m>" . "<%Y-%m-%d %H:%M>")
