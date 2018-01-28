@@ -17,7 +17,7 @@
   )
 
 
-
+(setq org-latex-prefer-user-labels t)
 ;; (setq org-latex-listings t)
 ;; (add-to-list 'org-latex-packages-alist '("" "listings"))
 
@@ -30,6 +30,9 @@
 ;; the 2nd call is there because if not, the table of contents are not rendered for some reason..
 (setq org-latex-pdf-process 
 	  '("xelatex -shell-escape -interaction=nonstopmode %f"
+		"bibtex %b"
+		"xelatex -shell-escape -interaction=nonstopmode %f"
+		"bibtex %b"
 		"xelatex -shell-escape -interaction=nonstopmode %f"
 		))
 
