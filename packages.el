@@ -179,9 +179,7 @@
 		("C-S-z" . undo-tree-redo)
 		)
   :config
-  (unbind-key "C-/" undo-tree-undo)
   (global-undo-tree-mode 1)
-
   )
 
 (use-package ace-jump-mode
