@@ -1,5 +1,9 @@
-;; (server-start)
-(setq gc-cons-threshold 20000) ; ie 20mb, default is 800kb
+; see https://github.com/nilcons/emacs-use-package-fast
+(setq gc-cons-threshold 64000000)
+(add-hook 'after-init-hook #'(lambda ()
+                               ;; restore after startup
+                               (setq gc-cons-threshold 800000)))
+
 
 ;; Disable all version control
 (setq vc-handled-backends nil)
@@ -15,6 +19,7 @@
 
 ;; auto reload files when changed outside of emacs
 ;; (global-auto-revert-mode t)
+
 
 ;; backup directory
 (setq
@@ -56,7 +61,6 @@
 (require 'package)
 (setq package-enable-at-startup nil)
 (package-initialize)
-(require 'use-package)
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/"))
@@ -65,6 +69,8 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+  
+(require 'use-package)
 
 (load "~/.emacs.d/functions.el")
 (load "~/.emacs.d/packages.el")
@@ -110,7 +116,7 @@
  '(org-image-actual-width 100)
  '(package-selected-packages
    (quote
-	(magit yasnippet windresize use-package undo-tree sublime-themes smooth-scrolling rainbow-mode rainbow-delimiters powerline php-mode nlinum multiple-cursors monokai-theme matlab-mode markdown-mode key-chord iy-go-to-char htmlize helm-swoop helm-projectile helm-ag expand-region counsel company avy ag ace-jump-mode)))
+	(helm-swoop org-ref magit yasnippet windresize use-package undo-tree sublime-themes smooth-scrolling rainbow-mode rainbow-delimiters powerline php-mode nlinum multiple-cursors monokai-theme matlab-mode markdown-mode key-chord iy-go-to-char htmlize helm-projectile helm-ag expand-region counsel company avy ag ace-jump-mode)))
  '(safe-local-variable-values
    (quote
 	((org-time-stamp-custom-formats "<%Y-%m>" . "<%Y-%m-%d %H:%M>")
