@@ -4,6 +4,7 @@
 	  (add-to-list 'exec-path "c:/Program Files/Git/usr/bin")
 
 	  (setq explicit-shell-file-name "C:/Program Files/Git/bin/bash.exe")
+	  (setq org-babel-sh-command "'C:/Program Files/Git/bin/bash.exe'")
 
 	  (setq shell-file-name "bash")
 	  (setq explicit-bash.exe-args '("--noediting" "--login" "-i"))

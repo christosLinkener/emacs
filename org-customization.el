@@ -23,6 +23,9 @@
 		)
 	  )
 
+(org-babel-do-load-languages
+ 'org-babel-load-languages '((sh . t)))
+
 (setq org-goto-interface 'outline-path-completionp)
 (setq org-outline-path-complete-in-steps nil)
 
