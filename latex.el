@@ -2,7 +2,7 @@
 
 (let*
 	(
-	 (miktex "C:\\\\miktex\\texmfs\\install\\miktex\\bin")
+	 (miktex "C:\\miktex\\miktex\\bin\\x64")
 	 (texlive "C:\\texlive\\bin\\win32")
 	 (latexBin miktex) ;; change this line accordingly
 	 )
