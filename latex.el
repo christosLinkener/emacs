@@ -1,21 +1,5 @@
 ;; (message "Adding pdf latex etc in path:\n")
 
-(let*
-	(
-	 (miktex "C:\\miktex\\miktex\\bin\\x64")
-	 (texlive "C:\\texlive\\bin\\win32")
-	 (latexBin miktex) ;; change this line accordingly
-	 )
-  (setenv "PATH"
-		  (concat latexBin ";" (getenv "PATH"))
-		  )
-  (message "The new path:\n")
-  (message (getenv "PATH"))
-
-  ;; adding to the exec path (used for latex fragments) - which do not work :O
-  (setq exec-path (append (list latexBin) exec-path))
-  )
-
 
 (setq org-latex-prefer-user-labels t)
 ;; (setq org-latex-listings t)
