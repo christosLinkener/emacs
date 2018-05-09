@@ -77,6 +77,7 @@
 (load "~/.emacs.d/bindings.el")
 (load "~/.emacs.d/theme.el")
 (load "~/.emacs.d/windows.el")
+(load "~/.emacs.d/linux.el")
 (load "~/.emacs.d/latex.el")
 (load "~/.emacs.d/org-customization.el")
 
