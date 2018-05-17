@@ -19,6 +19,10 @@
   (set-face-attribute 'linum nil :height 100)
   )
 
+(use-package magit
+  :ensure t
+  )
+
 (use-package windresize
   :ensure t
   :config
