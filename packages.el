@@ -21,7 +21,7 @@
 
 (use-package restclient
   :ensure t
-  :mode (("\\.http\\'" . restclient-mode)
+  :mode ("\\.http\\'" . restclient-mode)
   )
 (use-package magit
   :ensure t
