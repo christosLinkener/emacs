@@ -19,6 +19,10 @@
   (set-face-attribute 'linum nil :height 100)
   )
 
+(use-package restclient
+  :ensure t
+  :mode (("\\.http\\'" . restclient-mode)
+  )
 (use-package magit
   :ensure t
   )

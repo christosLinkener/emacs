@@ -8,3 +8,6 @@ recentf
 .mc-lists.el
 .org-id-locations
 init.tex
+/bookmarks
+session.*
+/tramp

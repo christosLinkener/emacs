@@ -7,17 +7,6 @@
 (setcar (nthcdr 1 org-emphasis-regexp-components) "[:alpha:]- \t.,:!?;'\")}\\")
 (org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)
 
-
-;; enabling sh code execution in org mode
-(org-babel-do-load-languages 'org-babel-load-languages
-    '(
-        (sh . t)
-    )
-)
-
-
-
-
 ;; fontifying source blocks
 (setq org-src-fontify-natively t
 	  org-src-preserve-indentation t
@@ -34,8 +23,13 @@
 		)
 	  )
 
-(org-babel-do-load-languages
- 'org-babel-load-languages '((sh . t)))
+;; enabling sh execution
+(org-babel-do-load-languages 'org-babel-load-languages
+    '(
+	  (sh . t)
+	  (python . t)
+    )
+)
 
 (setq org-goto-interface 'outline-path-completionp)
 (setq org-outline-path-complete-in-steps nil)

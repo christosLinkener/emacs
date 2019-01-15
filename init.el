@@ -4,7 +4,6 @@
                                ;; restore after startup
                                (setq gc-cons-threshold 800000)))
 
-
 ;; Disable all version control
 (setq vc-handled-backends nil)
 
@@ -116,7 +115,7 @@
  '(org-image-actual-width 100)
  '(package-selected-packages
    (quote
-	(helm-swoop org-ref magit yasnippet windresize use-package undo-tree sublime-themes smooth-scrolling rainbow-mode rainbow-delimiters powerline php-mode nlinum multiple-cursors monokai-theme markdown-mode key-chord iy-go-to-char htmlize helm-projectile helm-ag expand-region counsel company avy ag ace-jump-mode)))
+	(restclient magit yasnippet windresize use-package undo-tree sublime-themes smooth-scrolling rainbow-mode rainbow-delimiters powerline php-mode nlinum multiple-cursors monokai-theme matlab-mode markdown-mode key-chord iy-go-to-char htmlize helm-swoop helm-projectile helm-ag expand-region counsel company avy ag ace-jump-mode)))
  '(safe-local-variable-values
    (quote
 	((org-time-stamp-custom-formats "<%Y-%m>" . "<%Y-%m-%d %H:%M>")
