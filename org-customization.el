@@ -28,6 +28,10 @@
     '(
 	  (sh . t)
 	  (python . t)
+	  (sql . t)
+	  (python . t)
+	  (restclient . t)
+	  (php . t)
     )
 )
 

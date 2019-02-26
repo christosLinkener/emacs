@@ -23,6 +23,16 @@
   :ensure t
   :mode ("\\.http\\'" . restclient-mode)
   )
+
+(use-package org-plus-contrib
+  ; for org-mode babel python (ob-python)
+  :ensure t
+  )
+
+(use-package ob-restclient
+  :ensure t
+  )
+
 (use-package magit
   :ensure t
   )

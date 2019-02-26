@@ -1,0 +1,5 @@
+* Solving random problem 
+  eg it solved org-mode exporting to html once
+  #+BEGIN_SRC sh
+for dir in "$HOME/.emacs.d/elpa/org-"*/; do find $dir -name "*.elc" -delete; done
+  #+END_SRC
