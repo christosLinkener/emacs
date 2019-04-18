@@ -3,3 +3,15 @@
   #+BEGIN_SRC sh
 for dir in "$HOME/.emacs.d/elpa/org-"*/; do find $dir -name "*.elc" -delete; done
   #+END_SRC
+
+* TODO Which key and keychord
+  https://github.com/justbur/emacs-which-key/issues/108#ref-commit-bf4c7d8
+  + could start using =Tab <key>= keychord, and then subkeys to logically group together commands and make things faster :)
+
+* Packages to check
+  + https://www.emacswiki.org/emacs/Icicles_-_Multi-Commands
+* magit
+** pushing up to a certaing commit
+   + got the log/commit view (with =l l=)
+   + press =P o= (push other)
+	 autocmpletion selects the commit hash, and the tracked remote branch :)

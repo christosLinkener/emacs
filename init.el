@@ -34,10 +34,13 @@
 ;; better scrolling
 (setq mouse-wheel-progressive-speed nil)
 
-(menu-bar-mode 0)
+(menu-bar-mode 1)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (cua-mode 1)
+;; removing c-ret from cua
+(define-key cua-global-keymap [C-return] nil)
+(define-key cua-global-keymap "C-x" nil)
 
 ;; word-wrapping
 (global-visual-line-mode 1)
@@ -63,6 +66,8 @@
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+
 
 ;; Bootstrap `use-package'
 (unless (package-installed-p 'use-package)
@@ -115,7 +120,7 @@
  '(org-image-actual-width 100)
  '(package-selected-packages
    (quote
-	(restclient magit yasnippet windresize use-package undo-tree sublime-themes smooth-scrolling rainbow-mode rainbow-delimiters powerline php-mode nlinum multiple-cursors monokai-theme matlab-mode markdown-mode key-chord iy-go-to-char htmlize helm-swoop helm-projectile helm-ag expand-region counsel company avy ag ace-jump-mode)))
+	(yaml-mode clojure-mode neotree which-key restclient magit yasnippet windresize use-package undo-tree sublime-themes smooth-scrolling rainbow-mode rainbow-delimiters powerline php-mode nlinum multiple-cursors monokai-theme matlab-mode markdown-mode key-chord iy-go-to-char htmlize helm-swoop helm-projectile helm-ag expand-region counsel company avy ag ace-jump-mode)))
  '(safe-local-variable-values
    (quote
 	((org-time-stamp-custom-formats "<%Y-%m>" . "<%Y-%m-%d %H:%M>")

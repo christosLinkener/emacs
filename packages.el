@@ -24,13 +24,16 @@
   :mode ("\\.http\\'" . restclient-mode)
   )
 
-(use-package org-plus-contrib
-  ; for org-mode babel python (ob-python)
-  :ensure t
+
+(use-package org
+  :ensure org-plus-contrib
   )
 
 (use-package ob-restclient
   :ensure t
+  :bind (:map restclient-mode-map
+			  ("<C-return>" . restclient-http-send-current-stay-in-window)
+		)
   )
 
 (use-package magit
